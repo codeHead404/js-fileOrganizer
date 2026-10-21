@@ -1,20 +1,20 @@
 import path from "path";
 import fs from "fs/promises";
-interface FolderForFiles {
-  images: string[];
-  videos: string[];
-  files: string[];
-  document: string[];
-}
+import type { FolderForFiles } from "./data/data.ts";
 process.argv.splice(0, 2);
 let mainDir = process.cwd();
 let directory = process.argv[0];
 let dryRun = process.argv[1];
-const obj: FolderForFiles = {
+// let storage = {
+//   directory,
+//   dryRun,
+//   reverse,
+// };
+const obj: Readonly<FolderForFiles> = {
   images: [".png", ".jpg"],
   videos: [".mp3", ".mp4"],
   files: [".js", ".tsx", ".jsx, .ts"],
-  document: [".ts", ".md", ".txt"],
+  document: [".md", ".txt"],
 };
 //
 async function ManagerFolder(directory: string | undefined) {
@@ -47,7 +47,7 @@ async function ManagerFolder(directory: string | undefined) {
         // the isFile already goes through subfoleder and get the file name
       }
       // if file
-      else if (file.isFile() && !dryRun) {
+      else if (file.isFile() && dryRun === undefined) {
         console.log("first");
         try {
           //console.log(file.name)
@@ -79,7 +79,7 @@ async function ManagerFolder(directory: string | undefined) {
             console.log("error", error);
           }
         }
-      } else if (dryRun && file.isFile()) {
+      } else if (file.isFile() && dryRun != undefined) {
         console.log("second");
         try {
           for (const key in obj) {

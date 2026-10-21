@@ -1,11 +1,25 @@
-INTRO 
+Introduction:
+This is a file - organizer software for organixing file in your current directory
+It currently support to cmd argument which is directory and DryRun
+For directory:
+IT cannot go outside your current workspace
+For DryRun:
+This argument helps you check what where your current files in that directory will end up in it does not execute the organizer
 
-This is a file organizer written in Typescript from a beginner who just love coding for fun and there is still work to be done
-like the cmd line interface the way to user add their input is kind of bad and also we need cmd for reversing what the organizer did 
-i think there is and input to check what will happen if the code runs but the interface and ho is display still need working on
-so if you are a beginner and looking for beginner project and want to learn with me a beginner cause looking for and easy repo to work with 
-for beginner is kind of hard. And i don't think this readme is suppose to contain this detail am giving out but is just for fun
+TExt
+you can run a text using the texting folder
 
-What need fixing :
-the interface for printing out the result and the cmd line for accepting user input also a reverse cmd to undo what the organizer did thanks and also this readme it needs updating 
-when i have time i will do all this correctly 
+to text the program using the texting Folder run this cmd: npm run dev texting
+To run the dryRun cmd on the texting Folder run this cmd: npm run dev texting -- --dryRun
+
+Cautions:
+Please not if the texting folder have no files just folder both cmd won't run or work cus is checking for files not folders
+
+Pending:
+We need a reverse cmd argument to reverse changes made by the organizer and also a dryRun for that reverse changes
+
+Notices:
+Please note when contibuting variable and function name should reflect what it does
+Focus on solving and pushing one issue at a time
+no AI generated code
+comment should be add when comment is needed
